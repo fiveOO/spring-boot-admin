@@ -121,8 +121,12 @@ public class JdkPerInstanceCookieStore implements PerInstanceCookieStore {
 	 * @param instanceId identifies the {@link Instance}
 	 * @return {@link CookieHandler} responsible for the given <code>instanceId</code>
 	 */
-	private CookieHandler getCookieHandler(final InstanceId instanceId) {
-		return cookieHandlerRegistry.computeIfAbsent(instanceId, (id) -> new CookieManager(null, cookiePolicy));
+	protected CookieHandler getCookieHandler(final InstanceId instanceId) {
+		return cookieHandlerRegistry.computeIfAbsent(instanceId, this::createCookieHandler);
+	}
+
+	protected CookieHandler createCookieHandler(final InstanceId instanceId) {
+		return new CookieManager(null, cookiePolicy);
 	}
 
 }
