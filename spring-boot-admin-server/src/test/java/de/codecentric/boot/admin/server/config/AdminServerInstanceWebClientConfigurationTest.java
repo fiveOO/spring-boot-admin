@@ -49,7 +49,8 @@ public class AdminServerInstanceWebClientConfigurationTest {
 			assertThat(context).getBeanNames(InstanceExchangeFilterFunction.class).containsExactly(
 					"addHeadersInstanceExchangeFilter", "rewriteEndpointUrlInstanceExchangeFilter",
 					"setDefaultAcceptHeaderInstanceExchangeFilter", "legacyEndpointConverterInstanceExchangeFilter",
-					"logfileAcceptWorkaround", "retryInstanceExchangeFilter", "timeoutInstanceExchangeFilter");
+					"logfileAcceptWorkaround", "cookieHandlingInstanceExchangeFilter", "retryInstanceExchangeFilter",
+					"timeoutInstanceExchangeFilter");
 			assertThat(context).getBeanNames(LegacyEndpointConverter.class).containsExactly(
 					"healthLegacyEndpointConverter", "infoLegacyEndpointConverter", "envLegacyEndpointConverter",
 					"httptraceLegacyEndpointConverter", "threaddumpLegacyEndpointConverter",
