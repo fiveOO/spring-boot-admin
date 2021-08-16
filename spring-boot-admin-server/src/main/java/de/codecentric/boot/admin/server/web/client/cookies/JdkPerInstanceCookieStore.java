@@ -116,9 +116,11 @@ public class JdkPerInstanceCookieStore implements PerInstanceCookieStore {
 	}
 
 	/**
-	 * Returns the stored {@link CookieHandler} for the identified {@link Instance} or
-	 * creates a new one, stores and returns it.
-	 * @param instanceId identifies the {@link Instance}
+	 * Returns the stored {@link CookieHandler} for the identified
+	 * {@link de.codecentric.boot.admin.server.domain.entities.Instance} or creates a new
+	 * one, stores and returns it.
+	 * @param instanceId identifies the
+	 * {@link de.codecentric.boot.admin.server.domain.entities.Instance}
 	 * @return {@link CookieHandler} responsible for the given <code>instanceId</code>
 	 */
 	protected CookieHandler getCookieHandler(final InstanceId instanceId) {
